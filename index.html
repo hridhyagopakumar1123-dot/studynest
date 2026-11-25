@@ -231,6 +231,110 @@
   );
 
   console.log("StudyNest connected to Supabase!");
+  
+async function signUpStudent() {
+  const status = document.getElementById("authStatus");
+
+  const fullName = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPassword").value;
+  const classLevel = document.getElementById("classLevel").value;
+  const stream = document.getElementById("stream").value;
+  const secondLanguage = document.getElementById("secondLanguage").value;
+
+  if (!fullName || !email || !password || !classLevel || !stream || !secondLanguage) {
+    status.textContent = "Please complete all fields.";
+    return;
+  }
+
+  if (password.length < 6) {
+    status.textContent = "Password must be at least 6 characters.";
+    return;
+  }
+
+  status.textContent = "Creating account...";
+
+  const { data, error } = await studyNestSupabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: "https://hridhyagopakumar1123-dot.github.io/studynest/",
+      data: {
+        full_name: fullName,
+        class_level: classLevel,
+        stream,
+        second_language: secondLanguage
+      }
+    }
+  });
+
+  if (error) {
+    status.textContent = error.message;
+    return;
+  }
+
+  status.textContent = data.session
+    ? "Account created successfully!"
+    : "Please check your email to verify your account.";
+}
+
+async function loginStudent() {
+  const status = document.getElementById("authStatus");
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+
+  if (!email || !password) {
+    status.textContent = "Enter your email and password.";
+    return;
+  }
+
+  status.textContent = "Signing in...";
+
+  const { data, error } = await studyNestSupabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    status.textContent = error.message;
+    return;
+  }
+
+  const user = data.user;
+  const profile = {
+    id: user.id,
+    full_name: user.user_metadata.full_name || "",
+    class_level: user.user_metadata.class_level || "",
+    stream: user.user_metadata.stream || "",
+    second_language: user.user_metadata.second_language || null
+  };
+
+  const { data: existingProfile, error: profileError } =
+    await studyNestSupabase
+      .from("profiles")
+      .select("id")
+      .eq("id", user.id)
+      .maybeSingle();
+
+  if (profileError) {
+    status.textContent = "Profile check failed: " + profileError.message;
+    return;
+  }
+
+  if (!existingProfile) {
+    const { error: insertError } = await studyNestSupabase
+      .from("profiles")
+      .insert(profile);
+
+    if (insertError) {
+      status.textContent = "Profile creation failed: " + insertError.message;
+      return;
+    }
+  }
+
+  status.textContent = "Welcome to StudyNest, " + profile.full_name + "!";
+}
+
 </script>
 </body>
 </html>
