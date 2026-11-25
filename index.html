@@ -17,6 +17,7 @@
       font-family: Inter, Arial, sans-serif;
       background: #f5f6fc;
       color: #202344;
+      line-height: 1.5;
     }
 
     header {
@@ -33,28 +34,19 @@
       font-size: 25px;
     }
 
-    header span {
+    header h1 span {
       color: #c7b8ff;
+    }
+
+    header p {
+      color: #ded9ff;
+      font-size: 14px;
     }
 
     main {
       max-width: 1100px;
       margin: 35px auto;
       padding: 0 20px;
-    }
-
-    .welcome {
-      margin-bottom: 28px;
-    }
-
-    .welcome h2 {
-      font-size: 29px;
-      margin-bottom: 8px;
-    }
-
-    .welcome p {
-      color: #73758e;
-      line-height: 1.5;
     }
 
     .section {
@@ -65,9 +57,82 @@
       box-shadow: 0 5px 20px #24205c0b;
     }
 
-    .section h2,
-    .section h3 {
-      margin-bottom: 16px;
+    .welcome {
+      margin-bottom: 25px;
+    }
+
+    .welcome h2 {
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p,
+    .muted {
+      color: #777991;
+    }
+
+    .auth-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .auth-box h3 {
+      margin-bottom: 15px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      margin: 7px 0;
+      font: inherit;
+      background: white;
+      color: #202344;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 2px solid #b8aaff;
+      border-color: #6554c0;
+    }
+
+    button {
+      border: none;
+      border-radius: 9px;
+      background: #6554c0;
+      color: white;
+      padding: 11px 17px;
+      cursor: pointer;
+      font: inherit;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background: #5141a5;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .secondary-button {
+      background: #eeeaff;
+      color: #44358f;
+    }
+
+    .secondary-button:hover {
+      background: #ded7ff;
+    }
+
+    .status {
+      margin-top: 15px;
+      color: #5141a5;
+      overflow-wrap: anywhere;
     }
 
     .cards {
@@ -93,110 +158,60 @@
       margin-top: 12px;
     }
 
+    .section h3 {
+      margin-bottom: 14px;
+    }
+
     .subject {
-      padding: 15px;
+      padding: 13px 15px;
       background: #f5f3ff;
       border-radius: 10px;
       margin: 10px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
-    }
-
-    button {
-      border: none;
-      border-radius: 9px;
-      background: #6554c0;
-      color: white;
-      padding: 11px 17px;
-      cursor: pointer;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    button:hover {
-      background: #5141a5;
-    }
-
-    .logout-button {
-      background: #e9e5ff;
-      color: #29245c;
-      margin: 0;
-    }
-
-    .logout-button:hover {
-      background: #d9d2ff;
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 7px 0;
-      font-size: 14px;
-      background: white;
-    }
-
-    input:focus,
-    select:focus {
-      outline: 2px solid #c7b8ff;
-      border-color: #6554c0;
-    }
-
-    .auth-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .auth-card {
-      background: #faf9ff;
-      border: 1px solid #eeeaff;
-      padding: 20px;
-      border-radius: 13px;
-    }
-
-    .auth-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .auth-card button {
-      width: 100%;
-    }
-
-    #authStatus {
-      margin-top: 18px;
-      line-height: 1.5;
-      color: #5141a5;
+      gap: 12px;
       overflow-wrap: anywhere;
     }
 
-    #dashboard {
-      display: none;
+    .subject label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    #authSection {
-      display: block;
+    .subject input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .input-row input {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .input-row button {
+      margin-top: 7px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .empty-message {
-      color: #777;
+      color: #777991;
       padding: 8px 0;
-    }
-
-    .goal-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .goal-label input {
-      width: auto;
-      margin: 0;
     }
 
     footer {
@@ -205,14 +220,17 @@
       color: #888;
     }
 
-    @media (max-width: 550px) {
+    [hidden] {
+      display: none !important;
+    }
+
+    @media(max-width: 550px) {
       header {
         padding: 18px;
-        flex-wrap: wrap;
       }
 
-      header h1 {
-        font-size: 22px;
+      header p {
+        font-size: 12px;
       }
 
       main {
@@ -224,7 +242,7 @@
       }
 
       .section {
-        padding: 18px;
+        padding: 19px;
       }
     }
   </style>
@@ -234,12 +252,12 @@
 
   <header>
     <h1>Study<span>Nest</span></h1>
-    <span>Your space to grow ✦</span>
+    <p>Your space to grow ✦</p>
   </header>
 
   <main>
 
-    <!-- SIGN UP AND LOGIN -->
+    <!-- AUTHENTICATION SECTION -->
     <section class="section" id="authSection">
 
       <div class="welcome">
@@ -249,69 +267,111 @@
 
       <div class="auth-grid">
 
-        <div class="auth-card">
+        <!-- SIGN UP -->
+        <div class="auth-box">
           <h3>Create Account</h3>
 
-          <input id="fullName" type="text" placeholder="Full name" autocomplete="name">
+          <form id="signupForm">
+            <input
+              id="fullName"
+              type="text"
+              placeholder="Full name"
+              autocomplete="name"
+              required
+            >
 
-          <input id="signupEmail" type="email" placeholder="Email address" autocomplete="email">
+            <input
+              id="signupEmail"
+              type="email"
+              placeholder="Email address"
+              autocomplete="email"
+              required
+            >
 
-          <input id="signupPassword" type="password" placeholder="Password (at least 6 characters)" autocomplete="new-password">
+            <input
+              id="signupPassword"
+              type="password"
+              placeholder="Password (minimum 6 characters)"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            >
 
-          <select id="classLevel">
-            <option value="">Choose your class</option>
-            <option value="Plus One">Plus One</option>
-            <option value="Plus Two">Plus Two</option>
-          </select>
+            <select id="classLevel" required>
+              <option value="">Choose your class</option>
+              <option value="Plus One">Plus One</option>
+              <option value="Plus Two">Plus Two</option>
+            </select>
 
-          <select id="stream">
-            <option value="">Choose your stream</option>
-            <option value="Science">Science</option>
-            <option value="Commerce">Commerce</option>
-            <option value="Humanities">Humanities</option>
-          </select>
+            <select id="stream" required>
+              <option value="">Choose your stream</option>
+              <option value="Science">Science</option>
+              <option value="Commerce">Commerce</option>
+              <option value="Humanities">Humanities</option>
+            </select>
 
-          <select id="secondLanguage">
-            <option value="">Choose second language</option>
-            <option value="Hindi">Hindi</option>
-            <option value="Malayalam">Malayalam</option>
-          </select>
+            <select id="secondLanguage" required>
+              <option value="">Choose your second language</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Malayalam">Malayalam</option>
+            </select>
 
-          <button type="button" onclick="signUpStudent()">Create Account</button>
+            <button type="submit" id="signupButton">
+              Create Account
+            </button>
+          </form>
         </div>
 
-        <div class="auth-card">
+        <!-- LOGIN -->
+        <div class="auth-box">
           <h3>Already have an account?</h3>
 
-          <input id="loginEmail" type="email" placeholder="Email address" autocomplete="email">
+          <form id="loginForm">
+            <input
+              id="loginEmail"
+              type="email"
+              placeholder="Email address"
+              autocomplete="email"
+              required
+            >
 
-          <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
+            <input
+              id="loginPassword"
+              type="password"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+            >
 
-          <button type="button" onclick="loginStudent()">Sign In</button>
+            <button type="submit" id="loginButton">
+              Sign In
+            </button>
+          </form>
         </div>
 
       </div>
 
-      <p id="authStatus" role="status" aria-live="polite"></p>
+      <p class="status" id="authStatus" role="status" aria-live="polite"></p>
     </section>
 
 
     <!-- STUDENT DASHBOARD -->
-    <section id="dashboard">
+    <section id="dashboard" hidden>
 
-      <div class="welcome">
-        <h2 id="welcomeHeading">Welcome to StudyNest! 👋</h2>
-        <p>Your learning journey starts here. Plan, practise and progress.</p>
-      </div>
+      <div class="section">
+        <div class="top-row">
+          <div class="welcome">
+            <h2 id="welcomeMessage">Welcome back! 👋</h2>
+            <p class="muted">Your learning journey starts here.</p>
+          </div>
 
-      <div style="display:flex; justify-content:flex-end; margin-bottom:15px;">
-        <button class="logout-button" type="button" onclick="logoutStudent()">
-          Sign Out
-        </button>
+          <button class="secondary-button" id="logoutButton">
+            Sign Out
+          </button>
+        </div>
       </div>
 
       <div class="cards">
-
         <div class="card">
           <small>Today's study time</small>
           <h3 id="studyTime">0 min</h3>
@@ -323,12 +383,12 @@
         </div>
 
         <div class="card">
-          <small>Study goals completed</small>
-          <h3 id="completedGoals">0</h3>
+          <small>Goals completed</small>
+          <h3 id="completedCount">0</h3>
         </div>
-
       </div>
 
+      <!-- SUBJECTS -->
       <div class="section">
         <h3>📚 My Subjects</h3>
 
@@ -336,40 +396,60 @@
           <p class="empty-message">Your subjects will appear here.</p>
         </div>
 
-        <input id="subjectInput" type="text" placeholder="Enter a subject">
-
-        <button type="button" onclick="addSubject()">Add Subject</button>
+        <div class="input-row">
+          <input
+            id="subjectInput"
+            type="text"
+            placeholder="Enter a subject"
+          >
+          <button id="addSubjectButton">Add Subject</button>
+        </div>
       </div>
 
+      <!-- DAILY GOALS -->
       <div class="section">
         <h3>🎯 Today's Goals</h3>
 
-        <p style="color:#777; margin-bottom:15px;">
+        <p class="muted" style="margin-bottom:15px">
           Start with one small goal and build your consistency.
         </p>
 
-        <input id="goalInput" type="text" placeholder="Enter your study goal">
+        <div class="input-row">
+          <input
+            id="goalInput"
+            type="text"
+            placeholder="Enter your study goal"
+          >
+          <button id="addGoalButton">Add Goal</button>
+        </div>
 
-        <button type="button" onclick="addGoal()">Add Goal</button>
-
-        <div id="goals"></div>
+        <div id="goals">
+          <p class="empty-message">No goals added yet.</p>
+        </div>
       </div>
+
+      <p class="status" id="dashboardStatus" role="status"></p>
 
     </section>
 
   </main>
 
-  <footer>Made for learners, built for growth ✦ StudyNest</footer>
+  <footer>
+    Made for learners, built for growth ✦ StudyNest
+  </footer>
 
 
-  <!-- SUPABASE -->
+  <!-- SUPABASE LIBRARY -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
-    const SUPABASE_URL = "https://cjdxgumrhqvwngxcnpux.supabase.co";
+    // ------------------------------------
+    // SUPABASE CONFIGURATION
+    // ------------------------------------
 
-    // This is the public publishable key.
-    // Never put a service_role or secret key in frontend code.
+    const SUPABASE_URL =
+      "https://cjdxgumrhqvwngxcnpux.supabase.co";
+
     const SUPABASE_PUBLISHABLE_KEY =
       "sb_publishable_NYP2e9XTRalCC2xMUgfCkA_1Z3W7nlK";
 
@@ -378,21 +458,50 @@
       SUPABASE_PUBLISHABLE_KEY
     );
 
-    console.log("StudyNest Supabase client initialized.");
+
+    // ------------------------------------
+    // APP STATE
+    // ------------------------------------
+
+    let subjects = [];
+    let goals = [];
+    let currentUser = null;
 
 
-    // -----------------------------
-    // AUTHENTICATION
-    // -----------------------------
+    // ------------------------------------
+    // HELPER FUNCTIONS
+    // ------------------------------------
 
-    function showStatus(message) {
-      document.getElementById("authStatus").textContent = message;
+    function getElement(id) {
+      return document.getElementById(id);
+    }
+
+    function showStatus(id, message) {
+      getElement(id).textContent = message;
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[character]);
+    }
+
+    function setLoading(buttonId, loading, loadingText, normalText) {
+      const button = getElement(buttonId);
+      button.disabled = loading;
+      button.textContent = loading ? loadingText : normalText;
     }
 
 
-    async function ensureStudentProfile(user) {
-      const metadata = user.user_metadata || {};
+    // ------------------------------------
+    // PROFILE MANAGEMENT
+    // ------------------------------------
 
+    async function ensureStudentProfile(user) {
       const { data: existingProfile, error: profileError } =
         await studyNestSupabase
           .from("profiles")
@@ -408,189 +517,202 @@
         return existingProfile;
       }
 
-      const fullName = metadata.full_name || "";
-      const classLevel = metadata.class_level || "";
-      const stream = metadata.stream || "";
-      const secondLanguage = metadata.second_language || null;
+      const metadata = user.user_metadata || {};
 
-      if (!fullName || !classLevel || !stream) {
+      const profile = {
+        id: user.id,
+        full_name: metadata.full_name || "",
+        class_level: metadata.class_level || "",
+        stream: metadata.stream || "",
+        second_language: metadata.second_language || null
+      };
+
+      if (
+        !profile.full_name ||
+        !["Plus One", "Plus Two"].includes(profile.class_level) ||
+        !["Science", "Commerce", "Humanities"].includes(profile.stream)
+      ) {
         throw new Error(
-          "Your student profile details are missing. Please contact support."
+          "Your student profile is incomplete. Please contact support."
         );
       }
 
-      const newProfile = {
-        id: user.id,
-        full_name: fullName,
-        class_level: classLevel,
-        stream: stream,
-        second_language: secondLanguage
-      };
-
-      const { data: createdProfile, error: insertError } =
+      const { data: newProfile, error: insertError } =
         await studyNestSupabase
           .from("profiles")
-          .insert(newProfile)
+          .insert(profile)
           .select("id, full_name")
           .single();
 
       if (insertError) {
-        throw new Error("Profile creation failed: " + insertError.message);
+        throw new Error(
+          "Profile creation failed: " + insertError.message
+        );
       }
 
-      return createdProfile;
+      return newProfile;
     }
 
 
-    async function signUpStudent() {
-      const fullName = document.getElementById("fullName").value.trim();
-      const email = document.getElementById("signupEmail").value.trim();
-      const password = document.getElementById("signupPassword").value;
-      const classLevel = document.getElementById("classLevel").value;
-      const stream = document.getElementById("stream").value;
-      const secondLanguage = document.getElementById("secondLanguage").value;
+    // ------------------------------------
+    // SHOW DASHBOARD
+    // ------------------------------------
 
-      if (
-        !fullName ||
-        !email ||
-        !password ||
-        !classLevel ||
-        !stream ||
-        !secondLanguage
-      ) {
-        showStatus("Please complete all the signup fields.");
+    function showDashboard(profile) {
+      currentUser = profile;
+
+      getElement("authSection").hidden = true;
+      getElement("dashboard").hidden = false;
+
+      const name = profile.full_name || "Student";
+
+      getElement("welcomeMessage").textContent =
+        "Welcome back, " + name + "! 👋";
+
+      showStatus("dashboardStatus", "");
+
+      renderSubjects();
+      renderGoals();
+    }
+
+
+    function showLoginScreen() {
+      currentUser = null;
+
+      getElement("authSection").hidden = false;
+      getElement("dashboard").hidden = true;
+    }
+
+
+    // ------------------------------------
+    // SIGN UP
+    // ------------------------------------
+
+    getElement("signupForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const fullName = getElement("fullName").value.trim();
+      const email = getElement("signupEmail").value.trim();
+      const password = getElement("signupPassword").value;
+      const classLevel = getElement("classLevel").value;
+      const stream = getElement("stream").value;
+      const secondLanguage = getElement("secondLanguage").value;
+
+      if (!fullName || !email || !password || !classLevel || !stream || !secondLanguage) {
+        showStatus("authStatus", "Please complete all fields.");
         return;
       }
 
       if (password.length < 6) {
-        showStatus("Password must be at least 6 characters.");
+        showStatus("authStatus", "Password must be at least 6 characters.");
         return;
       }
 
-      showStatus("Creating your account...");
-
-      const { data, error } = await studyNestSupabase.auth.signUp({
-        email: email,
-        password: password,
-        options: {
-          emailRedirectTo:
-            "https://hridhyagopakumar1123-dot.github.io/studynest/",
-          data: {
-            full_name: fullName,
-            class_level: classLevel,
-            stream: stream,
-            second_language: secondLanguage
-          }
-        }
-      });
-
-      if (error) {
-        showStatus("Signup error: " + error.message);
-        return;
-      }
-
-      if (data.session && data.user) {
-        try {
-          await ensureStudentProfile(data.user);
-          showStatus("Account created successfully!");
-          showDashboard(data.user);
-        } catch (profileError) {
-          showStatus(profileError.message);
-        }
-      } else {
-        showStatus(
-          "Account created! Please check your email and verify your account before signing in."
-        );
-      }
-    }
-
-
-    async function loginStudent() {
-      const email = document.getElementById("loginEmail").value.trim();
-      const password = document.getElementById("loginPassword").value;
-
-      if (!email || !password) {
-        showStatus("Please enter your email and password.");
-        return;
-      }
-
-      showStatus("Signing in...");
-
-      const { data, error } =
-        await studyNestSupabase.auth.signInWithPassword({
-          email: email,
-          password: password
-        });
-
-      if (error) {
-        showStatus("Login error: " + error.message);
-        return;
-      }
+      setLoading("signupButton", true, "Creating account...", "Create Account");
+      showStatus("authStatus", "");
 
       try {
-        await ensureStudentProfile(data.user);
-        showStatus("Signed in successfully!");
-        showDashboard(data.user);
-      } catch (profileError) {
-        showStatus(profileError.message);
+        const { data, error } =
+          await studyNestSupabase.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+              emailRedirectTo:
+                "https://hridhyagopakumar1123-dot.github.io/studynest/",
+
+              data: {
+                full_name: fullName,
+                class_level: classLevel,
+                stream: stream,
+                second_language: secondLanguage
+              }
+            }
+          });
+
+        if (error) {
+          throw error;
+        }
+
+        if (data.session && data.user) {
+          const profile = await ensureStudentProfile(data.user);
+          showDashboard(profile);
+          showStatus("dashboardStatus", "Your account is ready!");
+        } else {
+          showStatus(
+            "authStatus",
+            "Account created! Please check your email and verify your account before signing in."
+          );
+        }
+
+      } catch (error) {
+        showStatus("authStatus", error.message);
+      } finally {
+        setLoading("signupButton", false, "Creating account...", "Create Account");
       }
-    }
+    });
 
 
-    async function logoutStudent() {
+    // ------------------------------------
+    // LOGIN
+    // ------------------------------------
+
+    getElement("loginForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const email = getElement("loginEmail").value.trim();
+      const password = getElement("loginPassword").value;
+
+      setLoading("loginButton", true, "Signing in...", "Sign In");
+      showStatus("authStatus", "");
+
+      try {
+        const { data, error } =
+          await studyNestSupabase.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
+
+        if (error) {
+          throw error;
+        }
+
+        const profile = await ensureStudentProfile(data.user);
+
+        showDashboard(profile);
+
+      } catch (error) {
+        showStatus("authStatus", error.message);
+      } finally {
+        setLoading("loginButton", false, "Signing in...", "Sign In");
+      }
+    });
+
+
+    // ------------------------------------
+    // LOGOUT
+    // ------------------------------------
+
+    getElement("logoutButton").addEventListener("click", async function() {
       const { error } = await studyNestSupabase.auth.signOut();
 
       if (error) {
-        alert("Sign out error: " + error.message);
+        showStatus("dashboardStatus", error.message);
         return;
       }
 
-      document.getElementById("dashboard").style.display = "none";
-      document.getElementById("authSection").style.display = "block";
-      showStatus("You have signed out.");
-    }
+      subjects = [];
+      goals = [];
+      showLoginScreen();
+      showStatus("authStatus", "You have signed out successfully.");
+    });
 
 
-    function showDashboard(user) {
-      const metadata = user.user_metadata || {};
-
-      const name = metadata.full_name || "Student";
-
-      document.getElementById("authSection").style.display = "none";
-      document.getElementById("dashboard").style.display = "block";
-      document.getElementById("welcomeHeading").textContent =
-        "Welcome to StudyNest, " + name + "! 👋";
-    }
-
-
-    async function checkExistingSession() {
-      const { data, error } = await studyNestSupabase.auth.getSession();
-
-      if (error) {
-        showStatus("Session check failed: " + error.message);
-        return;
-      }
-
-      if (data.session && data.session.user) {
-        try {
-          await ensureStudentProfile(data.session.user);
-          showDashboard(data.session.user);
-        } catch (profileError) {
-          showStatus(profileError.message);
-        }
-      }
-    }
-
-
-    // -----------------------------
+    // ------------------------------------
     // SUBJECTS
-    // -----------------------------
-
-    let subjects = [];
-    let goals = [];
+    // ------------------------------------
 
     function addSubject() {
-      const input = document.getElementById("subjectInput");
+      const input = getElement("subjectInput");
       const value = input.value.trim();
 
       if (!value) return;
@@ -601,20 +723,16 @@
       renderSubjects();
     }
 
-
     function renderSubjects() {
-      const container = document.getElementById("subjects");
-
-      document.getElementById("subjectCount").textContent =
-        subjects.length;
+      getElement("subjectCount").textContent = subjects.length;
 
       if (subjects.length === 0) {
-        container.innerHTML =
+        getElement("subjects").innerHTML =
           '<p class="empty-message">Your subjects will appear here.</p>';
         return;
       }
 
-      container.innerHTML = subjects.map(subject =>
+      getElement("subjects").innerHTML = subjects.map(subject =>
         `<div class="subject">
           <span>${escapeHTML(subject)}</span>
           <span>📖</span>
@@ -622,13 +740,15 @@
       ).join("");
     }
 
+    getElement("addSubjectButton").addEventListener("click", addSubject);
 
-    // -----------------------------
+
+    // ------------------------------------
     // DAILY GOALS
-    // -----------------------------
+    // ------------------------------------
 
     function addGoal() {
-      const input = document.getElementById("goalInput");
+      const input = getElement("goalInput");
       const value = input.value.trim();
 
       if (!value) return;
@@ -642,53 +762,84 @@
       renderGoals();
     }
 
-
     function renderGoals() {
-      const container = document.getElementById("goals");
+      const completed = goals.filter(goal => goal.done).length;
 
-      container.innerHTML = goals.map((goal, index) =>
+      getElement("completedCount").textContent = completed;
+
+      if (goals.length === 0) {
+        getElement("goals").innerHTML =
+          '<p class="empty-message">No goals added yet.</p>';
+        return;
+      }
+
+      getElement("goals").innerHTML = goals.map((goal, index) =>
         `<div class="subject">
-          <label class="goal-label">
+          <label>
             <input
               type="checkbox"
-              onchange="toggleGoal(${index})"
+              data-goal-index="${index}"
               ${goal.done ? "checked" : ""}
             >
             <span>${escapeHTML(goal.text)}</span>
           </label>
+          <span>${goal.done ? "✓" : "🎯"}</span>
         </div>`
       ).join("");
-
-      const completed = goals.filter(goal => goal.done).length;
-
-      document.getElementById("completedGoals").textContent =
-        completed;
     }
 
+    getElement("addGoalButton").addEventListener("click", addGoal);
 
-    function toggleGoal(index) {
-      goals[index].done = !goals[index].done;
+    getElement("goals").addEventListener("change", function(event) {
+      const index = event.target.dataset.goalIndex;
+
+      if (index === undefined) return;
+
+      goals[Number(index)].done = event.target.checked;
       renderGoals();
+    });
+
+
+    // ------------------------------------
+    // RESTORE EXISTING LOGIN SESSION
+    // ------------------------------------
+
+    async function restoreSession() {
+      try {
+        const { data, error } =
+          await studyNestSupabase.auth.getSession();
+
+        if (error) throw error;
+
+        if (data.session && data.session.user) {
+          const profile = await ensureStudentProfile(data.session.user);
+          showDashboard(profile);
+        } else {
+          showLoginScreen();
+        }
+
+      } catch (error) {
+        showLoginScreen();
+        showStatus("authStatus", error.message);
+      }
     }
 
 
-    // -----------------------------
-    // HTML SAFETY
-    // -----------------------------
+    // ------------------------------------
+    // START APP
+    // ------------------------------------
 
-    function escapeHTML(value) {
-      return value.replace(/[&<>"']/g, character => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;"
-      })[character]);
+    if (
+      SUPABASE_PUBLISHABLE_KEY ===
+      "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE"
+    ) {
+      showStatus(
+        "authStatus",
+        "Please add your Supabase publishable key in the configuration section."
+      );
+    } else {
+      restoreSession();
     }
-
-
-    // Check whether a student is already signed in.
-    checkExistingSession();
 
   </script>
 
